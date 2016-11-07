@@ -21,6 +21,8 @@ commands.checkInput = function(cmd) {
   if (cmd.slice(0, 4) === "tail"){
     var file = cmd.slice(5);
     commands.tail(file);
+  } else {
+    process.stderr.write(`Error: command "${cmd}" does not exist`)
   }
   // process.stdout.write('\nprompt > ');
 };
